@@ -2,4 +2,4 @@
 ## Fall 2017
 
 ### Course Repo:
-https://github.com/CastleCorp/CSC_Mobile.git
+https://github.com/crowcasso/340_2017
