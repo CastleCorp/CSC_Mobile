@@ -1,5 +1,5 @@
 //
-//  Pascal'sTriangle.swift
+//  Pascal'sTriangle
 //
 //
 //  Created by Parker Thomas on 9/6/17.
