@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A360a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,7 +30,7 @@
                                         <color key="backgroundColor" red="0.69802047310000004" green="0.86763445480000001" blue="0.83408332799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="28m-fb-BcF" appends="YES" id="sXF-on-c5A"/>
+                                            <outletCollection property="gestureRecognizers" destination="xdw-R2-zU1" appends="YES" id="OJm-1o-f6G"/>
                                         </connections>
                                     </imageView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ace_of_spades" translatesAutoresizingMaskIntoConstraints="NO" id="Vh5-HV-F8N">
@@ -38,7 +38,7 @@
                                         <color key="backgroundColor" red="0.69802047310000004" green="0.86763445480000001" blue="0.83408332799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="ffS-wU-69B" appends="YES" id="DWb-kJ-q6Y"/>
+                                            <outletCollection property="gestureRecognizers" destination="cJ7-8S-Q2d" appends="YES" id="vBI-l4-LLU"/>
                                         </connections>
                                     </imageView>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ace_of_spades" translatesAutoresizingMaskIntoConstraints="NO" id="qu6-Sy-fmM">
@@ -46,7 +46,7 @@
                                         <color key="backgroundColor" red="0.69802047310000004" green="0.86763445480000001" blue="0.83408332799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="uKH-yw-aX6" appends="YES" id="0ta-jT-U9w"/>
+                                            <outletCollection property="gestureRecognizers" destination="4C6-l5-nyY" appends="YES" id="vl4-og-2nO"/>
                                         </connections>
                                     </imageView>
                                 </subviews>
@@ -60,25 +60,25 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="firstCardImage" destination="ftb-3b-cte" id="Eu7-Nh-EK4"/>
-                        <outlet property="secondCardImage" destination="Vh5-HV-F8N" id="Mvk-2U-ILw"/>
-                        <outlet property="thirdCardImage" destination="qu6-Sy-fmM" id="bh6-cB-f9K"/>
+                        <outlet property="firstCardImageView" destination="ftb-3b-cte" id="iUi-Ri-qE0"/>
+                        <outlet property="secondCardImageView" destination="Vh5-HV-F8N" id="X2H-ML-G6K"/>
+                        <outlet property="thirdCardImageView" destination="qu6-Sy-fmM" id="Qmu-QI-4Qw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="28m-fb-BcF">
+                <tapGestureRecognizer id="xdw-R2-zU1">
                     <connections>
-                        <action selector="firstCardTapped:" destination="BYZ-38-t0r" id="9Hn-bp-nkb"/>
+                        <action selector="cardTapped:" destination="BYZ-38-t0r" id="EJI-82-fE3"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="ffS-wU-69B">
+                <tapGestureRecognizer id="cJ7-8S-Q2d">
                     <connections>
-                        <action selector="secondCardTapped:" destination="BYZ-38-t0r" id="W1N-cj-xwT"/>
+                        <action selector="cardTapped:" destination="BYZ-38-t0r" id="k9x-Mq-4BK"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="uKH-yw-aX6">
+                <tapGestureRecognizer id="4C6-l5-nyY">
                     <connections>
-                        <action selector="thirdCardTapped:" destination="BYZ-38-t0r" id="JH9-kO-TjI"/>
+                        <action selector="cardTapped:" destination="BYZ-38-t0r" id="gXT-RL-GqV"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

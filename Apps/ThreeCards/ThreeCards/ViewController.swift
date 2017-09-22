@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var firstCardImage: UIImageView!
-    @IBOutlet weak var secondCardImage: UIImageView!
-    @IBOutlet weak var thirdCardImage: UIImageView!
+    @IBOutlet weak var firstCardImageView: UIImageView!
+    @IBOutlet weak var secondCardImageView: UIImageView!
+    @IBOutlet weak var thirdCardImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,26 +23,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func switchImage(_ card: UIImageView) {
-        if(card.image == #imageLiteral(resourceName: "ace_of_spades")) {
-            card.image = #imageLiteral(resourceName: "back_of_card")
+
+    /* Using a single function for all 3 Tap Gesture Recoginizers */
+    @IBAction func cardTapped(_ sender: UITapGestureRecognizer) {
+        
+        // figure out which UIImageView was tapped
+        let cardImageView = sender.view! as! UIImageView
+        
+        // flip the card
+        if cardImageView.image == #imageLiteral(resourceName: "ace_of_spades") {
+            cardImageView.image = #imageLiteral(resourceName: "back_of_card")
         } else {
-            card.image = #imageLiteral(resourceName: "ace_of_spades")
+            cardImageView.image = #imageLiteral(resourceName: "ace_of_spades")
         }
+        
     }
-    
-    @IBAction func firstCardTapped(_ sender: UITapGestureRecognizer) {
-        switchImage(firstCardImage)
-    }
-    
-    @IBAction func secondCardTapped(_ sender: UITapGestureRecognizer) {
-        switchImage(secondCardImage)
-    }
-    
-    @IBAction func thirdCardTapped(_ sender: UITapGestureRecognizer) {
-       switchImage(thirdCardImage)
-    }
-    
+
 }
 
