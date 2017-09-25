@@ -36,4 +36,11 @@ class Card {
         downImage = #imageLiteral(resourceName: "back_of_card")
     }
     
+    func getCurrentImage() -> UIImage {
+        if state == .up {
+            return upImage
+        }
+        return downImage
+    }
+    
 }
