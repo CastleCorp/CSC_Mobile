@@ -2,7 +2,7 @@
 //  Deck.swift
 //  ThreeCards
 //
-//  Created by Parker Thomas on 9/25/17.
+//  Created by Joel Hollingsworth on 9/27/17.
 //  Copyright © 2017 Joel Hollingsworth. All rights reserved.
 //
 
@@ -13,19 +13,21 @@ let suits = ["spades"]
 
 class Deck {
     
+    //: Properties
     var deck: [Card] = []
-    var inUse : [Bool] = []
+    var inUse: [Bool] = []
     
     init() {
-        for suit in suits {
-            for value in values {
+        for value in values {
+            for suit in suits {
                 deck.append(Card(value, suit))
                 inUse.append(false)
             }
         }
     }
     
-    func drawRandomCard() -> Card {
+    // Pick and return a random card from the deck
+    func dealRandomCard() -> Card {
         var which = 0
         
         repeat {
