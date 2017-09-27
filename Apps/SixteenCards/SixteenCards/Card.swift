@@ -1,9 +1,9 @@
 //
 //  Card.swift
-//  ThreeCards
+//  SixteenCards
 //
-//  Created by Joel Hollingsworth on 9/25/17.
-//  Copyright © 2017 Joel Hollingsworth. All rights reserved.
+//  Created by Parker Thomas on 9/27/17.
+//  Copyright © 2017 Parker Thomas. All rights reserved.
 //
 
 import Foundation
@@ -20,14 +20,14 @@ class Card {
         case down
     }
     
-    var state = CardState.up
+    var state = CardState.down
     
     var upImage: UIImage
     var downImage = #imageLiteral(resourceName: "back_of_card")
     
     var text: String
     
-    // initializer for the class
+    // initializer
     init(_ value: String, _ suit: String) {
         self.value = value
         self.suit = suit
@@ -37,15 +37,15 @@ class Card {
         text = "\(value) of \(suit)"
     }
     
-    // the current image based on the card state
+    // get the current image
     func getCurrentImage() -> UIImage {
         if state == .up {
             return upImage
         }
-        
         return downImage
     }
     
+    // flip the card state, does not update image
     func flip() {
         if state == .down {
             state = .up

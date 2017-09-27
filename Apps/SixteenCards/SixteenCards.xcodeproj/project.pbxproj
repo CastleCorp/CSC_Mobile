@@ -14,6 +14,9 @@
 		5669F3A61F79A78E00C2316C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5669F3A41F79A78E00C2316C /* LaunchScreen.storyboard */; };
 		5669F3B11F79A78E00C2316C /* SixteenCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5669F3B01F79A78E00C2316C /* SixteenCardsTests.swift */; };
 		5669F3BC1F79A78E00C2316C /* SixteenCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5669F3BB1F79A78E00C2316C /* SixteenCardsUITests.swift */; };
+		D25C40C31F7C01D8005B44A9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25C40C21F7C01D8005B44A9 /* Card.swift */; };
+		D25C40C51F7C01E4005B44A9 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25C40C41F7C01E4005B44A9 /* Deck.swift */; };
+		D25C40C71F7C01F2005B44A9 /* MatchGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25C40C61F7C01F2005B44A9 /* MatchGameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		5669F3B71F79A78E00C2316C /* SixteenCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixteenCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5669F3BB1F79A78E00C2316C /* SixteenCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixteenCardsUITests.swift; sourceTree = "<group>"; };
 		5669F3BD1F79A78E00C2316C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D25C40C21F7C01D8005B44A9 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		D25C40C41F7C01E4005B44A9 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		D25C40C61F7C01F2005B44A9 /* MatchGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchGameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			children = (
 				5669F39B1F79A78E00C2316C /* AppDelegate.swift */,
 				5669F39D1F79A78E00C2316C /* ViewController.swift */,
+				D25C40C21F7C01D8005B44A9 /* Card.swift */,
+				D25C40C41F7C01E4005B44A9 /* Deck.swift */,
+				D25C40C61F7C01F2005B44A9 /* MatchGameModel.swift */,
 				5669F39F1F79A78E00C2316C /* Main.storyboard */,
 				5669F3A21F79A78E00C2316C /* Assets.xcassets */,
 				5669F3A41F79A78E00C2316C /* LaunchScreen.storyboard */,
@@ -259,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D25C40C51F7C01E4005B44A9 /* Deck.swift in Sources */,
 				5669F39E1F79A78E00C2316C /* ViewController.swift in Sources */,
+				D25C40C31F7C01D8005B44A9 /* Card.swift in Sources */,
 				5669F39C1F79A78E00C2316C /* AppDelegate.swift in Sources */,
+				D25C40C71F7C01F2005B44A9 /* MatchGameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +517,7 @@
 				5669F3C21F79A78E00C2316C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5669F3C31F79A78E00C2316C /* Build configuration list for PBXNativeTarget "SixteenCardsTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +526,7 @@
 				5669F3C51F79A78E00C2316C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5669F3C61F79A78E00C2316C /* Build configuration list for PBXNativeTarget "SixteenCardsUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +535,7 @@
 				5669F3C81F79A78E00C2316C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

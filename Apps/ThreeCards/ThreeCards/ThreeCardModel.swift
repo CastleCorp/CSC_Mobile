@@ -23,4 +23,8 @@ class ThreeCardModel {
     func getCardImage(_ which: Int) -> UIImage {
         return hand[which].getCurrentImage()
     }
+    
+    func flipCard(_ which: Int) {
+        hand[which].flip()
+    }
 }

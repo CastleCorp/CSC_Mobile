@@ -43,29 +43,21 @@ class ViewController: UIViewController {
     var imageViews: [UIImageView] = []
     var flipCounter = 0
     
+    let matchGameModel = MatchGameModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imageViews = [firstCardImageViewController, secondCardImageViewController, thirdCardImageViewController, fourthCardImageViewController, fifthCardImageViewController, sixthCardImageViewController, seventhCardImageViewController, eighthCardImageViewController, ningthCardImageViewController, tenthCardImageViewController, eleventhCardImageViewController, twelfthCardImageViewController, thirteenthCardImageViewController, fourteenthCardImageViewController, fifteenthCardImageViewController, sixteenthCardImageViewController]
         
-        for imageView in imageViews {
-            imageView.image = #imageLiteral(resourceName: "back_of_card")
+        for i in 0..<imageViews.count {
+            imageViews[i].image = matchGameModel.getCardImage(i)
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func flipCard(_ card: UIImageView) {
-        if card.image == #imageLiteral(resourceName: "back_of_card") {
-            card.image = #imageLiteral(resourceName: "ace_of_spades")
-        } else {
-            card.image = #imageLiteral(resourceName: "back_of_card")
-        }
-        
-        addToFlipCounter()
     }
     
     func addToFlipCounter() {
@@ -75,15 +67,17 @@ class ViewController: UIViewController {
     
     @IBAction func cardTapped(_ sender: UITapGestureRecognizer) {
        
-        let imageView = sender.view! as! UIImageView
+        let cardImageView = sender.view! as! UIImageView
         
         var which = -1
         for i in 0..<imageViews.count {
-            if imageViews[i] == imageView {
+            if cardImageView == imageViews[i] {
                 which = i
             }
         }
-        flipCard(imageViews[which])
+        
+        matchGameModel.flipCard(which)
+        imageViews[which].image = matchGameModel.getCardImage(which)
     }
 }
 
