@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // User Interface (View)
+    // View
     @IBOutlet weak var firstCardImageView: UIImageView!
     @IBOutlet weak var secondCardImageView: UIImageView!
     @IBOutlet weak var thirdCardImageView: UIImageView!
@@ -18,15 +18,17 @@ class ViewController: UIViewController {
     var imageViews: [UIImageView] = []
     
     // Model
-    let model = Model()
+    let threeCardModel = ThreeCardModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        // place the imageviews into an array to mimic the hand of cards
         imageViews = [firstCardImageView, secondCardImageView, thirdCardImageView]
         
+        // assign the images from the hand of cards
         for i in 0..<imageViews.count {
-            imageViews[i].image = model.getCardImage(i)
+            imageViews[i].image = threeCardModel.getCardImage(i)
         }
     }
 
@@ -34,19 +36,9 @@ class ViewController: UIViewController {
     @IBAction func cardTapped(_ sender: UITapGestureRecognizer) {
         
         // figure out which UIImageView was tapped
-        let cardImageView = sender.view! as! UIImageView
+        //let cardImageView = sender.view! as! UIImageView
         
-        // find which card was tapped
-        var which = -1
-        for i in 0..<imageViews.count {
-            if imageViews[i] == cardImageView {
-                which = i
-            }
-        }
         
-        //model.flipCard(which)
-        
-        //update the View
     }
 
 }
