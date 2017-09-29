@@ -74,6 +74,7 @@ class ViewController: UIViewController {
         scoreLabel.text = "Score: \(score)"
     }
     
+    
     @IBAction func cardTapped(_ sender: UITapGestureRecognizer) {
        
         let cardImageView = sender.view! as! UIImageView
@@ -129,14 +130,12 @@ class ViewController: UIViewController {
                     
                     print("No match")
                     
-                    sleep(10)
-                    
                     // cards did not match, so flip them to the back
                     matchGameModel.flipCard(which)
                     matchGameModel.flipCard(matchGameModel.lastCardFlipped)
                     imageViews[which].image = matchGameModel.getCardImage(which)
                     imageViews[matchGameModel.lastCardFlipped].image = matchGameModel.getCardImage(matchGameModel.lastCardFlipped)
-                    messageAreaLabel.text = "You picked: \(matchGameModel.getCardText(which))"
+                    messageAreaLabel.text = "You picked: \(matchGameModel.getCardText(which)) \n No match."
                     
                     matchGameModel.lastCardFlipped = -1
 

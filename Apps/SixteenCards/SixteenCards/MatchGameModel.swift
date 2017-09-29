@@ -58,4 +58,21 @@ class MatchGameModel {
         return hand[which].text
     }
     
+    func matchesRemaining() -> Bool {
+        var remainingCards: [Card] = []
+        for card in hand {
+            if card.state == .down {
+                remainingCards.append(card)
+            }
+        }
+        for c1 in remainingCards {
+            for c2 in remainingCards {
+                if c1.suit == c2.suit || c1.value == c2.value {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
 }
