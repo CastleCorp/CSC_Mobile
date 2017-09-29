@@ -86,7 +86,7 @@ class ViewController: UIViewController {
             }
         }
         
-        if(matchGameModel.getCardImage(which) == #imageLiteral(resourceName: "back_of_card")) {
+        if(matchGameModel.getCardImage(which) == #imageLiteral(resourceName: "back_of_card") && matchGameModel.matchesRemaining()) {
             
             matchGameModel.flipCard(which)
             imageViews[which].image = matchGameModel.getCardImage(which)
@@ -148,6 +148,9 @@ class ViewController: UIViewController {
             matchGameModel.lastCardFlipped = which
             
             //print(matchGameModel.lastCardFlipped)
+        } else {
+            // No matches remaining
+            print("No more matches")
         }
     }
 }
