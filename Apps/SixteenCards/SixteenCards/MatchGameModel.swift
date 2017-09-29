@@ -14,7 +14,7 @@ class MatchGameModel {
     //: Properties
     let deck = Deck()
     var hand: [Card] = []
-    var lastCardFlipped: Card!
+    var lastCardFlipped: Int = -1
     
     init() {
         for _ in 1...52 {
@@ -29,11 +29,33 @@ class MatchGameModel {
     
     func flipCard(_ which: Int) {
         hand[which].flip()
-        lastCardFlipped = hand[which]
     }
     
-    func getLastCardFlipped() -> Card {
+    func getLastCardFlipped() -> Int {
         return lastCardFlipped
+    }
+    
+    
+    func cardsMatch(_ whichFirstCard: Int, _ whichSecondCard: Int) -> (Bool, Bool) {
+        let firstCard = hand[whichFirstCard]
+        let secondCard = hand[whichSecondCard]
+        
+        if(firstCard.suit == secondCard.suit && firstCard.value == secondCard.value) {
+            return (true, true)
+        }
+        
+        if(firstCard.suit == secondCard.suit) {
+            return (true, false)
+        }
+        
+        if(firstCard.value == secondCard.value) {
+            return (false, true)
+        }
+        return (false, false)
+    }
+    
+    func getCardText(_ which: Int) -> String {
+        return hand[which].text
     }
     
 }
