@@ -58,8 +58,8 @@ class MatchGameModel {
     }
     
     func removeMatchedCards(_ firstCard: Int, _ secondCard: Int) {
-        hand.remove(whichFirstCard)
-        hand.remove(whichSecondCard)
+        hand.remove(at: firstCard)
+        hand.remove(at: secondCard)
     }
     
     func getCardText(_ which: Int) -> String {
@@ -67,7 +67,15 @@ class MatchGameModel {
     }
     
     func matchesRemaining() -> Bool {
+        var remainingCards: [Card] = []
+        for i in 0..<hand.count {
+            if hand[i].state == .down {
+                remainingCards.append(hand[i])
+            }
+        }
+    
         return true
+        
     }
     
 }
