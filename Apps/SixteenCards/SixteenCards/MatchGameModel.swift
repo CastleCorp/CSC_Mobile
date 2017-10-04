@@ -67,15 +67,6 @@ class MatchGameModel {
     }
     
     func matchesRemaining() -> Bool {
-        var remainingCards: [Card] = []
-        for i in 0..<hand.count {
-            if hand[i].state == .down {
-                remainingCards.append(hand[i])
-            }
-        }
-    
-        return true
-        
+        return false
     }
-    
 }

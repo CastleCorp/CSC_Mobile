@@ -86,6 +86,10 @@ class ViewController: UIViewController {
             }
         }
         
+        if(!matchGameModel.matchesRemaining()) {
+            
+        }
+        
         if(matchGameModel.getCardImage(which) == #imageLiteral(resourceName: "back_of_card") && matchGameModel.matchesRemaining()) {
             
             matchGameModel.flipCard(which)
@@ -112,14 +116,17 @@ class ViewController: UIViewController {
                         // Match by suit only add 4
                         addToScore(4)
                         messageAreaLabel.text = "You matched suits!"
+                        
                     } else if(matchGameModel.cardsMatch(which, matchGameModel.lastCardFlipped).1 && !matchGameModel.cardsMatch(which, matchGameModel.lastCardFlipped).0) {
                         // Match by value only add 16
                         addToScore(16)
                         messageAreaLabel.text = "You matched values!"
+                        
                     } else {
                         // Match by both suit and value add 20
                         addToScore(20)
                         messageAreaLabel.text = "You matched suits and values!"
+                        
                     }
                     
                     matchGameModel.lastCardFlipped = -1
@@ -131,13 +138,11 @@ class ViewController: UIViewController {
                     print("No match")
                     
                     // cards did not match, so flip them to the back
-                    matchGameModel.flipCard(which)
                     matchGameModel.flipCard(matchGameModel.lastCardFlipped)
-                    imageViews[which].image = matchGameModel.getCardImage(which)
                     imageViews[matchGameModel.lastCardFlipped].image = matchGameModel.getCardImage(matchGameModel.lastCardFlipped)
                     messageAreaLabel.text = "You picked: \(matchGameModel.getCardText(which)) \n No match."
                     
-                    matchGameModel.lastCardFlipped = -1
+                    matchGameModel.lastCardFlipped = which
 
                     return
                 }
@@ -147,10 +152,10 @@ class ViewController: UIViewController {
             messageAreaLabel.text = "You picked: \(matchGameModel.getCardText(which))"
             matchGameModel.lastCardFlipped = which
             
-            //print(matchGameModel.lastCardFlipped)
         } else {
             // No matches remaining
             print("No more matches")
+            
         }
     }
 }
