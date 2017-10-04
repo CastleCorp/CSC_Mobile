@@ -14,6 +14,7 @@
 		29F0BC681F826BDF003CA75A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29F0BC661F826BDF003CA75A /* LaunchScreen.storyboard */; };
 		29F0BC721F826EFC003CA75A /* AddGeotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0BC711F826EFC003CA75A /* AddGeotificationViewController.swift */; };
 		29F0BC751F827015003CA75A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F0BC741F827015003CA75A /* MapKit.framework */; };
+		D2DB66551F853C0A007AF3AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB66541F853C0A007AF3AC /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		29F0BC691F826BDF003CA75A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29F0BC711F826EFC003CA75A /* AddGeotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeotificationViewController.swift; sourceTree = "<group>"; };
 		29F0BC741F827015003CA75A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D2DB66541F853C0A007AF3AC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				29F0BC661F826BDF003CA75A /* LaunchScreen.storyboard */,
 				29F0BC691F826BDF003CA75A /* Info.plist */,
 				29F0BC711F826EFC003CA75A /* AddGeotificationViewController.swift */,
+				D2DB66541F853C0A007AF3AC /* Extensions.swift */,
 			);
 			path = Geotify;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				29F0BC721F826EFC003CA75A /* AddGeotificationViewController.swift in Sources */,
 				29F0BC601F826BDF003CA75A /* ViewController.swift in Sources */,
 				29F0BC5E1F826BDF003CA75A /* AppDelegate.swift in Sources */,
+				D2DB66551F853C0A007AF3AC /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +321,7 @@
 				29F0BC6E1F826BDF003CA75A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

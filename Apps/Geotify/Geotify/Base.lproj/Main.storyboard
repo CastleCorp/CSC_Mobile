@@ -36,6 +36,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Geotifications (0)" id="uOx-Ys-uL7">
+                        <barButtonItem key="leftBarButtonItem" image="location" id="iK7-dc-bJi">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="zoomToCurrentLocation:" destination="BYZ-38-t0r" id="IS5-7M-uTG"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="f30-rk-kxA">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -43,6 +49,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="EG9-t3-0aA" id="23q-FH-uvk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,4 +195,7 @@
             <point key="canvasLocation" x="161" y="994"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location" width="15" height="15"/>
+    </resources>
 </document>
