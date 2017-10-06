@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         }
         
         if(!matchGameModel.matchesRemaining()) {
-            
+        
         }
         
         if(matchGameModel.getCardImage(which) == #imageLiteral(resourceName: "back_of_card") && matchGameModel.matchesRemaining()) {

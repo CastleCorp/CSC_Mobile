@@ -7,7 +7,7 @@ xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/
 http://www.garmin.com/xmlschemas/GpxExtensions/v3
 http://www8.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd"
 version="1.1"
-creator="gpx-poi.com">
+creator="Parker Thomas">
    <wpt lat="36.104874" lon="-79.504347">
       <ele>691</ele>
       <time>2017-10-06T15:57:43Z</time>
