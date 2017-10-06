@@ -57,11 +57,28 @@ class ViewController: UIViewController {
         for i in 0..<imageViews.count {
             imageViews[i].image = matchGameModel.getCardImage(i)
         }
+        for i in 0..<imageViews.count {
+            matchGameModel.remainingCards.append(matchGameModel.hand[i])
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func restartGame() {
+        for i in 0..<imageViews.count {
+            imageViews[i].isUserInteractionEnabled = true
+            imageViews[i].alpha = 1
+            imageViews[i].image = matchGameModel.getCardImage(i)
+        }
+        messageAreaLabel.text = "Match cards by suit or value to earn points. \n Tap a card to start!"
+        flipCounter = 0
+        score = 0
+        flipsLabel.text = "Flips: \(flipCounter)"
+        scoreLabel.text = "Score: \(score)"
+        matchGameModel.lastCardFlipped = -1
     }
     
     func addToFlips() {
@@ -72,6 +89,37 @@ class ViewController: UIViewController {
     func addToScore(_ value: Int) {
         score = score + value
         scoreLabel.text = "Score: \(score)"
+    }
+    
+    func gameOverAlert() {
+        let alert = UIAlertController(title: "Game over!", message: "Would you like to play again?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Play again!", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+               self.matchGameModel.restartGame()
+               self.restartGame()
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+            }
+        }))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                alert.dismiss(animated: true, completion: nil)
+                
+            case .destructive:
+                print("destructive")
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     
@@ -85,12 +133,18 @@ class ViewController: UIViewController {
                 which = i
             }
         }
+          // Couldn't get matchesRemaining to work, but the alert works and the "play again" button works
+          // Uncomment the line below to try it
+          // gameOverAlert()
         
-        if(!matchGameModel.matchesRemaining()) {
-            
-        }
+// Does not work vvv
+//        if(!matchGameModel.matchesRemaining()) {
+//            gameOverAlert()
+//        }
         
-        if(matchGameModel.getCardImage(which) == #imageLiteral(resourceName: "back_of_card") && matchGameModel.matchesRemaining()) {
+        
+        
+        if(matchGameModel.getCardImage(which) == #imageLiteral(resourceName: "back_of_card") /*&& matchGameModel.matchesRemaining()*/) {
             
             matchGameModel.flipCard(which)
             imageViews[which].image = matchGameModel.getCardImage(which)
@@ -99,7 +153,7 @@ class ViewController: UIViewController {
             //print("which: \(which)")
             //print("start \(matchGameModel.lastCardFlipped)")
             
-            if(matchGameModel.lastCardFlipped != -1) {
+            if(matchGameModel.lastCardFlipped != -1 && matchGameModel.matchesRemaining()) {
                 
                 // test if the lastCardFlipped matches the card just tapped
                 if(matchGameModel.cardsMatch(which, matchGameModel.lastCardFlipped).0 || matchGameModel.cardsMatch(which, matchGameModel.lastCardFlipped).1) {
@@ -123,7 +177,7 @@ class ViewController: UIViewController {
                         messageAreaLabel.text = "You matched values!"
                         
                     } else {
-                        // Match by both suit and value add 20
+                        // Match by both suit and value add 20. Shouldn't happen unless there are two of the same cards, but you never know (for example, jokers)
                         addToScore(20)
                         messageAreaLabel.text = "You matched suits and values!"
                         
@@ -153,7 +207,7 @@ class ViewController: UIViewController {
             matchGameModel.lastCardFlipped = which
             
         } else {
-            // No matches remaining
+            // No matches remaining. (left over from testing if there are still matches
             print("No more matches")
             
         }

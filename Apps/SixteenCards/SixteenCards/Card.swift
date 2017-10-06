@@ -18,6 +18,7 @@ class Card {
     enum CardState {
         case up
         case down
+        case matched
     }
     
     var state = CardState.down
@@ -52,5 +53,12 @@ class Card {
         } else {
             state = .down
         }
+    }
+    
+    func isMatched() -> Bool {
+        if state == .matched {
+            return true
+        }
+        return false
     }
 }

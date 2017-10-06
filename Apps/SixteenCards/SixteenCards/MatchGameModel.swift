@@ -12,12 +12,13 @@ import UIKit
 class MatchGameModel {
     
     //: Properties
-    let deck = Deck()
+    var deck = Deck()
     var hand: [Card] = []
+    var remainingCards: [Card] = []
     var lastCardFlipped: Int = -1
     
     init() {
-        for _ in 1...52 {
+        for _ in 1...16 {
             hand.append(deck.dealRandomCard())
         }
     }
@@ -44,29 +45,59 @@ class MatchGameModel {
         let secondCard = hand[whichSecondCard]
         
         if(firstCard.suit == secondCard.suit && firstCard.value == secondCard.value) {
+            setMatched(whichFirstCard)
+            setMatched(whichSecondCard)
             return (true, true)
         }
         
         if(firstCard.suit == secondCard.suit) {
+            setMatched(whichFirstCard)
+            setMatched(whichSecondCard)
             return (true, false)
         }
         
         if(firstCard.value == secondCard.value) {
+            setMatched(whichFirstCard)
+            setMatched(whichSecondCard)
             return (false, true)
         }
         return (false, false)
-    }
-    
-    func removeMatchedCards(_ firstCard: Int, _ secondCard: Int) {
-        hand.remove(at: firstCard)
-        hand.remove(at: secondCard)
     }
     
     func getCardText(_ which: Int) -> String {
         return hand[which].text
     }
     
+    func setMatched(_ which: Int) {
+        hand[which].state = .matched
+    }
+    
     func matchesRemaining() -> Bool {
+        for i in 0..<hand.count {
+            if hand[i].state != .matched {
+                remainingCards.append(hand[i])
+            }
+        }
+        
+        for j in 0..<remainingCards.count {
+            let cardJ = remainingCards[j]
+            for k in 0..<remainingCards.count {
+                let cardK = remainingCards[k]
+                if(j != k) {
+                    if(cardJ.suit == cardK.suit || cardJ.value == cardK.value) {
+                        return true
+                    }
+                }
+            }
+        }
         return false
+    }
+    
+    func restartGame() {
+        deck = Deck()
+        hand = []
+        for _ in 1...16 {
+            hand.append(deck.dealRandomCard())
+        }
     }
 }
