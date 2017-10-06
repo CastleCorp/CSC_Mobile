@@ -143,6 +143,12 @@ class ViewController: UIViewController {
 //        }
         
         
+<<<<<<< HEAD
+=======
+        if(!matchGameModel.matchesRemaining()) {
+        
+        }
+>>>>>>> aedd8f27bfb53af5b8a9d98c935efd012c961bb3
         
         if(matchGameModel.getCardImage(which) == #imageLiteral(resourceName: "back_of_card") /*&& matchGameModel.matchesRemaining()*/) {
             

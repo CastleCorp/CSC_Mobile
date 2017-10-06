@@ -14,6 +14,7 @@
 		29F0BC681F826BDF003CA75A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29F0BC661F826BDF003CA75A /* LaunchScreen.storyboard */; };
 		29F0BC721F826EFC003CA75A /* AddGeotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F0BC711F826EFC003CA75A /* AddGeotificationViewController.swift */; };
 		29F0BC751F827015003CA75A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F0BC741F827015003CA75A /* MapKit.framework */; };
+		D2C8F8FE1F87E0AF00269C72 /* elonNC.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D2C8F8FD1F87E0AF00269C72 /* elonNC.gpx */; };
 		D2DB66551F853C0A007AF3AC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB66541F853C0A007AF3AC /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		29F0BC691F826BDF003CA75A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29F0BC711F826EFC003CA75A /* AddGeotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGeotificationViewController.swift; sourceTree = "<group>"; };
 		29F0BC741F827015003CA75A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D2C8F8FD1F87E0AF00269C72 /* elonNC.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = elonNC.gpx; sourceTree = "<group>"; };
 		D2DB66541F853C0A007AF3AC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +47,7 @@
 		29F0BC511F826BDF003CA75A = {
 			isa = PBXGroup;
 			children = (
+				D2C8F8FD1F87E0AF00269C72 /* elonNC.gpx */,
 				29F0BC5C1F826BDF003CA75A /* Geotify */,
 				29F0BC5B1F826BDF003CA75A /* Products */,
 				29F0BC731F827015003CA75A /* Frameworks */,
@@ -143,6 +146,7 @@
 			files = (
 				29F0BC681F826BDF003CA75A /* LaunchScreen.storyboard in Resources */,
 				29F0BC651F826BDF003CA75A /* Assets.xcassets in Resources */,
+				D2C8F8FE1F87E0AF00269C72 /* elonNC.gpx in Resources */,
 				29F0BC631F826BDF003CA75A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

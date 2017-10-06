@@ -150,7 +150,16 @@
                                 <action selector="onCancel:" destination="Ijb-l5-DRd" id="7cI-bM-bYh"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="location" id="l4x-dI-VMF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="zoomToUserLocation:" destination="Ijb-l5-DRd" id="viP-5x-4RL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="ty9-ov-dfe" id="790-0r-lIL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ss-Z7-YN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
