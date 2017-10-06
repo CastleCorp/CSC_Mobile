@@ -7,6 +7,7 @@
 //
 
 import MapKit
+import CoreLocation
 
 extension MKMapView {
     func zoomToUserLocation() {
@@ -16,5 +17,17 @@ extension MKMapView {
         }
         let region = MKCoordinateRegionMakeWithDistance(coordinate, 10000, 10000)
         setRegion(region, animated: true)
+    }
+}
+
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        mapView.showsUserLocation = (status == .authorizedAlways)
+    }
+}
+
+extension AddGeotificationViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        mapView.showsUserLocation = (status == .authorizedAlways)
     }
 }
