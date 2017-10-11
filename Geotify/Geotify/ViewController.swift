@@ -1,5 +1,5 @@
 //
-//  AddGeotificationViewController.swift
+//  ViewController.swift
 //  Geotify
 //
 //  Created by Joel Hollingsworth on 10/2/17.
@@ -10,28 +10,21 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class AddGeotificationViewController: UIViewController {
-        
-    @IBOutlet weak var entryOrExit: UISegmentedControl!
-    @IBOutlet weak var radius: UITextField!
-    @IBOutlet weak var note: UITextField!
+class ViewController: UIViewController {
+
     @IBOutlet weak var mapView: MKMapView!
-    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
-    }
-    
-    @IBAction func onCancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        locationManager.requestAlwaysAuthorization()
+        
     }
 
-    @IBAction func addNewGeotification(_ sender: UIButton) {
-    }
     
     @IBAction func zoomToCurrentLocation(_ sender: UIBarButtonItem) {
         mapView.zoomToUserLocation()
     }
 }
+
