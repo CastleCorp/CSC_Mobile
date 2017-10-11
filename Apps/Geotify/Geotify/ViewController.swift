@@ -19,11 +19,20 @@ class ViewController: UIViewController {
         locationManger.delegate = self
         locationManger.requestAlwaysAuthorization()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addGeotification" {
+            let navigationController  = segue.destination as! UINavigationController
+            let vc = navigationController.viewControllers.first as! AddGeotificationViewController
+            
+            vc.parentReference = self
+            
+        }
+    }
 
     @IBAction func zoomToCurrentLocation(_ sender: UIBarButtonItem) {
         mapView.zoomToUserLocation()
     }
-
 
 }
 
