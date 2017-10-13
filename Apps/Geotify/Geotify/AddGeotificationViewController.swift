@@ -19,7 +19,7 @@ class AddGeotificationViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     
-    var parentReference: ViewController?
+    var viewController: ViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,9 @@ class AddGeotificationViewController: UIViewController {
         let eventType: Geotification.EventType = entryOrExit.selectedSegmentIndex == 0 ? .onEntry : .onExit
         let coordinate = mapView.centerCoordinate
         
+        viewController?.addGeotification(coordinate, radiusValue, noteValue, eventType)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func zoomToCurrentLocation(_ sender: UIBarButtonItem) {

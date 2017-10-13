@@ -25,9 +25,16 @@ class ViewController: UIViewController {
             let navigationController  = segue.destination as! UINavigationController
             let vc = navigationController.viewControllers.first as! AddGeotificationViewController
             
-            vc.parentReference = self
+            vc.viewController = self
             
         }
+    }
+    
+    func addGeotification(_ coordinate: CLLocationCoordinate2D, _ radius: CLLocationDistance, _ note: String, _ eventType: Geotification.EventType) {
+        print(radius)
+        print(note)
+        print(eventType)
+        print(coordinate)
     }
 
     @IBAction func zoomToCurrentLocation(_ sender: UIBarButtonItem) {

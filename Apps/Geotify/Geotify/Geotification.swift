@@ -7,8 +7,9 @@
 //
 
 import CoreLocation
+import MapKit
 
-class Geotification {
+class Geotification: NSObject, MKAnnotation {
     
     enum EventType: String {
         case onEntry = "On Entry"
@@ -19,6 +20,14 @@ class Geotification {
     var radius: CLLocationDistance
     var note: String
     var eventType: EventType
+    
+    var title: String? {
+        if note.isEmpty {
+            return "No Note"
+        } else {
+            return note
+        }
+    }
     
     init(coordinate: CLLocationCoordinate2D, radius: CLLocationDistance, note: String, eventType: EventType) {
         self.coordinate = coordinate
