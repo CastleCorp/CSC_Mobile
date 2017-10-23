@@ -16,6 +16,7 @@
 		D25EC83D1F9E41A50041B6AD /* FingersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25EC83C1F9E41A50041B6AD /* FingersTests.swift */; };
 		D25EC8481F9E41A50041B6AD /* FingersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25EC8471F9E41A50041B6AD /* FingersUITests.swift */; };
 		D25EC8561F9E41C30041B6AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25EC8551F9E41C30041B6AD /* ViewController.swift */; };
+		D2CCB85A1F9E4E8300894051 /* Finger Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2CCB8591F9E4E8300894051 /* Finger Font.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D25EC8471F9E41A50041B6AD /* FingersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FingersUITests.swift; sourceTree = "<group>"; };
 		D25EC8491F9E41A50041B6AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D25EC8551F9E41C30041B6AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D2CCB8591F9E4E8300894051 /* Finger Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Finger Font.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		D25EC8151F9E41A40041B6AD = {
 			isa = PBXGroup;
 			children = (
+				D2CCB8561F9E4DCB00894051 /* Resources */,
 				D25EC8201F9E41A50041B6AD /* Fingers */,
 				D25EC83B1F9E41A50041B6AD /* FingersTests */,
 				D25EC8461F9E41A50041B6AD /* FingersUITests */,
@@ -129,6 +132,14 @@
 				D25EC8491F9E41A50041B6AD /* Info.plist */,
 			);
 			path = FingersUITests;
+			sourceTree = "<group>";
+		};
+		D2CCB8561F9E4DCB00894051 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D2CCB8591F9E4E8300894051 /* Finger Font.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D25EC82D1F9E41A50041B6AD /* Main.storyboard in Resources */,
+				D2CCB85A1F9E4E8300894051 /* Finger Font.ttf in Resources */,
 				D25EC82F1F9E41A50041B6AD /* Assets.xcassets in Resources */,
 				D25EC8321F9E41A50041B6AD /* LaunchScreen.storyboard in Resources */,
 			);
