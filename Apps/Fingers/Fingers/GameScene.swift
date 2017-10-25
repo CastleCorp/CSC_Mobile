@@ -15,6 +15,8 @@ class GameScene: SKScene {
     public var numberOfPlayers: Int?
     public var gameMode: String?
     
+    var updateTime: TimeInterval?
+    
     var touchNodes = [UITouch:SKShapeNode]()
     
     let colors = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow, UIColor.orange]
@@ -40,8 +42,16 @@ class GameScene: SKScene {
             createCircleForTouch(touch: touch)
         }
         
-        print(numberOfPlayers)
-        print(gameMode)
+        if(touches.count == numberOfPlayers) {
+            print("Everyone is touching")
+            if(gameMode == "pick one") {
+                print("Mode: pick one")
+                // do something
+            } else {
+                print("Mode: make teams")
+                // do something else
+            }
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -70,6 +80,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        print(currentTime)
     }
     
     func createCircleForTouch(touch: UITouch) {

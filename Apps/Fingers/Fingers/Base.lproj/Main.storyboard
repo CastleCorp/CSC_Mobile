@@ -63,7 +63,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="70g-j9-aho"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="goButton" id="70g-j9-aho"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oxL-Qw-ru2">

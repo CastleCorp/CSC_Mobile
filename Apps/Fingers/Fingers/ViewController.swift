@@ -16,24 +16,16 @@ class ViewController: UIViewController {
     
     public var playerCount: Int = 2
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goButton" {
-            let navigationController = segue.destination as! UINavigationController
-            let vc = navigationController.viewControllers.first as! GameViewController
-            
-            vc.viewController = self
-        }
+        let vc = segue.destination as! GameViewController
+        vc.viewController = self
     }
     
     @IBAction func stepperChanged(_ sender: Any) {
-//        let labelText: String = playersLabel.text!
-//        let num: Int! = Int(labelText)
-        
         playersLabel.text! = String(Int(playerStepper!.value))
         playerCount = Int(playerStepper.value)
     }
