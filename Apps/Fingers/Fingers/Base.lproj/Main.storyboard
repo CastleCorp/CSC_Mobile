@@ -45,22 +45,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tVI-Fu-JoP">
-                                <rect key="frame" x="105" y="339.5" width="165" height="29"/>
+                                <rect key="frame" x="105" y="369.5" width="165" height="29"/>
                                 <segments>
                                     <segment title="Pick One"/>
                                     <segment title="Two Teams"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKJ-rf-XOF">
-                                <rect key="frame" x="164" y="597" width="47" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Go!"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKJ-rf-XOF">
+                                <rect key="frame" x="160" y="601" width="55" height="44"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Go">
+                                            <attributes>
+                                                <font key="NSFont" size="35" name="Finger-Finger"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="show" id="70g-j9-aho"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oxL-Qw-ru2">
-                                <rect key="frame" x="140.5" y="214.5" width="94" height="59"/>
+                                <rect key="frame" x="140.5" y="244.5" width="94" height="59"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ7-HM-Use">
                                         <rect key="frame" x="39.5" y="0.0" width="15" height="30"/>
@@ -68,14 +75,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Cxw-0m-AD8">
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Cxw-0m-AD8">
                                         <rect key="frame" x="0.0" y="30" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="stepperChanged:" destination="5q8-Wt-lxM" eventType="valueChanged" id="O1t-09-n1Y"/>
+                                        </connections>
                                     </stepper>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="oxL-Qw-ru2" firstAttribute="top" secondItem="Cva-Yd-vIb" secondAttribute="bottom" constant="160" id="2Oo-te-b6V"/>
                             <constraint firstItem="tVI-Fu-JoP" firstAttribute="centerX" secondItem="YXj-Ct-7pW" secondAttribute="centerX" id="9xZ-Eu-Lsx"/>
                             <constraint firstItem="tVI-Fu-JoP" firstAttribute="top" secondItem="oxL-Qw-ru2" secondAttribute="bottom" constant="66" id="Ak0-rV-sCv"/>
                             <constraint firstItem="NMC-Ud-dqN" firstAttribute="trailing" secondItem="Cva-Yd-vIb" secondAttribute="trailing" id="CxR-L5-zJZ"/>
@@ -83,11 +94,15 @@
                             <constraint firstItem="oxL-Qw-ru2" firstAttribute="centerX" secondItem="YXj-Ct-7pW" secondAttribute="centerX" id="GbK-ge-JZP"/>
                             <constraint firstItem="OKJ-rf-XOF" firstAttribute="centerX" secondItem="YXj-Ct-7pW" secondAttribute="centerX" id="Jah-DV-i2a"/>
                             <constraint firstItem="NMC-Ud-dqN" firstAttribute="bottom" secondItem="OKJ-rf-XOF" secondAttribute="bottom" constant="22" id="d3W-b8-ICr"/>
-                            <constraint firstItem="oxL-Qw-ru2" firstAttribute="top" secondItem="Cva-Yd-vIb" secondAttribute="bottom" constant="130" id="fWh-Jo-TCT"/>
                             <constraint firstItem="Cva-Yd-vIb" firstAttribute="top" secondItem="NMC-Ud-dqN" secondAttribute="top" id="paM-Xy-H7C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NMC-Ud-dqN"/>
                     </view>
+                    <connections>
+                        <outlet property="modeControl" destination="tVI-Fu-JoP" id="bZw-f1-PLe"/>
+                        <outlet property="playerStepper" destination="Cxw-0m-AD8" id="0QD-RM-kMD"/>
+                        <outlet property="playersLabel" destination="ZJ7-HM-Use" id="faJ-co-uou"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-dG-sFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

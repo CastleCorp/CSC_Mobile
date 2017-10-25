@@ -11,25 +11,25 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    var viewController: ViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
-
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
+        let scene = GameScene(size: view.bounds.size)
+        let skView = view as! SKView
+        scene.scaleMode = .resizeFill
+        scene.numberOfPlayers = viewController?.playerCount
+        
+        if(viewController?.modeControl.selectedSegmentIndex == 0) {
+            scene.gameMode = "pick one"
+        } else {
+            scene.gameMode = "make teams"
         }
+        
+        
+        skView.presentScene(scene)
     }
 
     override var shouldAutorotate: Bool {
