@@ -15,9 +15,22 @@ class GameScene: SKScene {
     public var numberOfPlayers: Int?
     public var gameMode: String?
     
+    var startTime: CFAbsoluteTime!
     var updateTime: TimeInterval?
+    var timeDifference: TimeInterval?
+    enum Timer {
+        case none
+        case twoSeconds
+        case fiveSeconds
+    }
+    var timer: Timer = .none
     
     var touchNodes = [UITouch:SKShapeNode]()
+    var randomTouch: UITouch?
+    var teamOne = [UITouch:SKShapeNode]()
+    var teamTwo = [UITouch:SKShapeNode]()
+    
+    var gv: GameViewController?
     
     let colors = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow, UIColor.orange]
     
@@ -40,17 +53,6 @@ class GameScene: SKScene {
         // loop through touches, make circles
         for touch in touches {
             createCircleForTouch(touch: touch)
-        }
-        
-        if(touches.count == numberOfPlayers) {
-            print("Everyone is touching")
-            if(gameMode == "pick one") {
-                print("Mode: pick one")
-                // do something
-            } else {
-                print("Mode: make teams")
-                // do something else
-            }
         }
     }
     
@@ -79,8 +81,29 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        print(currentTime)
+        
+        if(touchNodes.count == numberOfPlayers) {
+            print("Everyone is touching")
+            
+            timer = .twoSeconds
+            if(timer == .twoSeconds) {
+                startTime = CFAbsoluteTimeGetCurrent()
+                timer = .none
+            }
+            
+            let elapsed = CFAbsoluteTimeGetCurrent() - startTime
+            print(elapsed)
+            if(1 != 1) {
+                if(gameMode == "pick one") {
+                    print("Mode: pick one")
+                
+                } else {
+                    print("Mode: make teams")
+                    // do something else
+                }
+            }
+        }
+        
     }
     
     func createCircleForTouch(touch: UITouch) {
@@ -118,5 +141,26 @@ class GameScene: SKScene {
         
         return UIColor.brown
     }
+    
+    func pickOne() -> UITouch {
+        let n = Int(arc4random_uniform(UInt32(touchNodes.count)))
+        let index = touchNodes.index(touchNodes.startIndex, offsetBy: n)
+        let randomTouch = touchNodes[index]
+        for touch in touchNodes {
+            if touch.key != randomTouch.key {
+                removeCircleForTouch(touch: randomTouch.key)
+            }
+        }
+        return randomTouch.key
+    }
+    
+    func finished() {
+        //remove game scene
+        self.removeFromParent()
+        self.view?.presentScene(nil)
+        gv?.dismiss(animated: true, completion: nil)
+    }
+    
+    // timestamp - currentTime
 }
 

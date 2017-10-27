@@ -28,6 +28,7 @@ class GameViewController: UIViewController {
             scene.gameMode = "make teams"
         }
         
+        scene.gv? = self
         
         skView.presentScene(scene)
     }
