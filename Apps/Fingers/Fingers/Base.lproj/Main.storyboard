@@ -33,11 +33,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cva-Yd-vIb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="64.5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="82"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Fingers">
                                         <attributes>
-                                            <font key="NSFont" size="70" name="Finger-Finger"/>
+                                            <font key="NSFont" metaFont="system" size="70"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -69,12 +69,12 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKJ-rf-XOF">
-                                <rect key="frame" x="144.5" y="582.5" width="86" height="62.5"/>
+                                <rect key="frame" x="150.5" y="569" width="74" height="76"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="Go">
                                             <attributes>
-                                                <font key="NSFont" size="55" name="Finger-Finger"/>
+                                                <font key="NSFont" metaFont="system" size="55"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>

@@ -15,20 +15,12 @@ class GameScene: SKScene {
     public var numberOfPlayers: Int?
     public var gameMode: String?
     
-    var startTime: CFAbsoluteTime!
-    var updateTime: TimeInterval?
-    var timeDifference: TimeInterval?
-    enum Timer {
-        case none
-        case twoSeconds
-        case fiveSeconds
-    }
-    var timer: Timer = .none
     
     var touchNodes = [UITouch:SKShapeNode]()
+    var touchTeams = [UITouch:Int]()
     var randomTouch: UITouch?
-    var teamOne = [UITouch:SKShapeNode]()
-    var teamTwo = [UITouch:SKShapeNode]()
+    var teamOne = [UITouch]()
+    var teamTwo = [UITouch]()
     
     var gv: GameViewController?
     
@@ -81,25 +73,17 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
-        
-        if(touchNodes.count == numberOfPlayers) {
-            print("Everyone is touching")
-            
-            timer = .twoSeconds
-            if(timer == .twoSeconds) {
-                startTime = CFAbsoluteTimeGetCurrent()
-                timer = .none
-            }
-            
-            let elapsed = CFAbsoluteTimeGetCurrent() - startTime
-            print(elapsed)
-            if(1 != 1) {
-                if(gameMode == "pick one") {
-                    print("Mode: pick one")
-                
-                } else {
-                    print("Mode: make teams")
-                    // do something else
+        if(numberOfPlayers == touchNodes.count) {
+            let initialTime = Date()
+            while(numberOfPlayers == touchNodes.count) {
+                let newTime = Date()
+                if(newTime.timeIntervalSince(initialTime) >= 2) {
+                    if(gameMode == "pick one") {
+                        pickOne()
+                    }
+                    if(gameMode == "make teams") {
+                        makeTeams()
+                    }
                 }
             }
         }
@@ -142,23 +126,74 @@ class GameScene: SKScene {
         return UIColor.brown
     }
     
-    func pickOne() -> UITouch {
+    func pickOne() {
         let n = Int(arc4random_uniform(UInt32(touchNodes.count)))
         let index = touchNodes.index(touchNodes.startIndex, offsetBy: n)
         let randomTouch = touchNodes[index]
         for touch in touchNodes {
             if touch.key != randomTouch.key {
-                removeCircleForTouch(touch: randomTouch.key)
+                removeCircleForTouch(touch: touch.key)
             }
         }
-        return randomTouch.key
+        randomTouch.value.strokeColor = UIColor.cyan
+        print("Selected touch: \(randomTouch.key)")
+    }
+    
+    func makeTeams() {
+        var isEven: Bool = false
+        var teamOneSize = 0
+        var teamTwoSize = 0
+        if(touchNodes.count % 2 == 0) {
+            isEven = true
+        }
+        
+        if(isEven) {
+            teamOneSize = touchNodes.count / 2
+            teamTwoSize = touchNodes.count / 2
+        } else {
+            teamOneSize = (touchNodes.count - 1) / 2
+            teamTwoSize = teamOneSize + 1
+        }
+        
+        var assigned = [UITouch]()
+        
+        for _ in 0..<teamOneSize {
+            let n = Int(arc4random_uniform(UInt32(touchNodes.count)))
+            let index = touchNodes.index(touchNodes.startIndex, offsetBy: n)
+            let randomTouch = touchNodes[index]
+            
+            if(!assigned.contains(randomTouch.key)) {
+                teamOne.append(randomTouch.key)
+                assigned.append(randomTouch.key)
+                randomTouch.value.strokeColor = UIColor.orange
+            }
+        }
+        
+        for _ in 0..<teamTwoSize {
+            let n = Int(arc4random_uniform(UInt32(touchNodes.count)))
+            let index = touchNodes.index(touchNodes.startIndex, offsetBy: n)
+            let randomTouch = touchNodes[index]
+            
+            if(!assigned.contains(randomTouch.key)) {
+                teamTwo.append(randomTouch.key)
+                assigned.append(randomTouch.key)
+                randomTouch.value.strokeColor = UIColor.cyan
+            }
+        }
+        
     }
     
     func finished() {
-        //remove game scene
-        self.removeFromParent()
-        self.view?.presentScene(nil)
-        gv?.dismiss(animated: true, completion: nil)
+        let initialTime = Date()
+        while(true) {
+            let newTime = Date()
+            if(newTime.timeIntervalSince(initialTime) >= 5) {
+                //remove game scene
+                self.removeFromParent()
+                self.view?.presentScene(nil)
+                gv?.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     // timestamp - currentTime
