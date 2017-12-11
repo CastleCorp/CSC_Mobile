@@ -2,7 +2,7 @@
 //  Extensions.swift
 //  Geotify
 //
-//  Created by Parker Thomas on 10/4/17.
+//  Created by Joel Hollingsworth on 10/4/17.
 //  Copyright © 2017 Joel Hollingsworth. All rights reserved.
 //
 

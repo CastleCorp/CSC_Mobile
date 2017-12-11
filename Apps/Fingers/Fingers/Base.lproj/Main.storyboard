@@ -33,17 +33,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cva-Yd-vIb">
+<<<<<<< HEAD
                                 <rect key="frame" x="0.0" y="20" width="375" height="64.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Fingers">
                                         <attributes>
                                             <font key="NSFont" size="70" name="Finger-Finger"/>
+=======
+                                <rect key="frame" x="0.0" y="20" width="375" height="82"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Fingers">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="70"/>
+>>>>>>> 1638a3f0e26efc69143777b9caee456bab5ea682
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+<<<<<<< HEAD
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tVI-Fu-JoP">
                                 <rect key="frame" x="105" y="339.5" width="165" height="29"/>
                                 <segments>
@@ -61,6 +70,10 @@
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oxL-Qw-ru2">
                                 <rect key="frame" x="140.5" y="214.5" width="94" height="59"/>
+=======
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oxL-Qw-ru2">
+                                <rect key="frame" x="141.5" y="245" width="94" height="59"/>
+>>>>>>> 1638a3f0e26efc69143777b9caee456bab5ea682
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ7-HM-Use">
                                         <rect key="frame" x="39.5" y="0.0" width="15" height="30"/>
@@ -68,6 +81,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+<<<<<<< HEAD
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Cxw-0m-AD8">
                                         <rect key="frame" x="0.0" y="30" width="94" height="29"/>
                                     </stepper>
@@ -88,6 +102,58 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NMC-Ud-dqN"/>
                     </view>
+=======
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Cxw-0m-AD8">
+                                        <rect key="frame" x="0.0" y="30" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="stepperChanged:" destination="5q8-Wt-lxM" eventType="valueChanged" id="O1t-09-n1Y"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tVI-Fu-JoP">
+                                <rect key="frame" x="105.5" y="369" width="165" height="29"/>
+                                <segments>
+                                    <segment title="Pick One"/>
+                                    <segment title="Two Teams"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKJ-rf-XOF">
+                                <rect key="frame" x="150.5" y="569" width="74" height="76"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Go">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="55"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" identifier="goButton" id="70g-j9-aho"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oxL-Qw-ru2" firstAttribute="top" secondItem="YXj-Ct-7pW" secondAttribute="top" constant="245" id="0Ag-CM-03N"/>
+                            <constraint firstItem="NMC-Ud-dqN" firstAttribute="trailing" secondItem="Cva-Yd-vIb" secondAttribute="trailing" id="CxR-L5-zJZ"/>
+                            <constraint firstItem="Cva-Yd-vIb" firstAttribute="leading" secondItem="NMC-Ud-dqN" secondAttribute="leading" id="Dta-1b-zfU"/>
+                            <constraint firstItem="OKJ-rf-XOF" firstAttribute="centerX" secondItem="YXj-Ct-7pW" secondAttribute="centerX" id="Jah-DV-i2a"/>
+                            <constraint firstItem="NMC-Ud-dqN" firstAttribute="bottom" secondItem="OKJ-rf-XOF" secondAttribute="bottom" constant="22" id="d3W-b8-ICr"/>
+                            <constraint firstItem="oxL-Qw-ru2" firstAttribute="centerX" secondItem="tVI-Fu-JoP" secondAttribute="centerX" id="j39-Vv-AW1"/>
+                            <constraint firstItem="Cva-Yd-vIb" firstAttribute="top" secondItem="NMC-Ud-dqN" secondAttribute="top" id="paM-Xy-H7C"/>
+                            <constraint firstItem="tVI-Fu-JoP" firstAttribute="top" secondItem="oxL-Qw-ru2" secondAttribute="bottom" constant="65" id="wLi-y1-aS6"/>
+                            <constraint firstItem="tVI-Fu-JoP" firstAttribute="centerX" secondItem="OKJ-rf-XOF" secondAttribute="centerX" id="yEn-mB-vdy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NMC-Ud-dqN"/>
+                    </view>
+                    <connections>
+                        <outlet property="modeControl" destination="tVI-Fu-JoP" id="bZw-f1-PLe"/>
+                        <outlet property="playerStepper" destination="Cxw-0m-AD8" id="0QD-RM-kMD"/>
+                        <outlet property="playersLabel" destination="ZJ7-HM-Use" id="faJ-co-uou"/>
+                    </connections>
+>>>>>>> 1638a3f0e26efc69143777b9caee456bab5ea682
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-dG-sFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
