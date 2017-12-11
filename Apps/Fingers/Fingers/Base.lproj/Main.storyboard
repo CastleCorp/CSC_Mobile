@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5q8-Wt-lxM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Fingers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817" y="130"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IRP-rp-8j3">
+            <objects>
+                <viewController id="5q8-Wt-lxM" customClass="ViewController" customModule="Fingers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YXj-Ct-7pW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cva-Yd-vIb">
+                                <rect key="frame" x="0.0" y="20" width="375" height="64.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Fingers">
+                                        <attributes>
+                                            <font key="NSFont" size="70" name="Finger-Finger"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tVI-Fu-JoP">
+                                <rect key="frame" x="105" y="339.5" width="165" height="29"/>
+                                <segments>
+                                    <segment title="Pick One"/>
+                                    <segment title="Two Teams"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKJ-rf-XOF">
+                                <rect key="frame" x="164" y="597" width="47" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Go!"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="70g-j9-aho"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oxL-Qw-ru2">
+                                <rect key="frame" x="140.5" y="214.5" width="94" height="59"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ7-HM-Use">
+                                        <rect key="frame" x="39.5" y="0.0" width="15" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Cxw-0m-AD8">
+                                        <rect key="frame" x="0.0" y="30" width="94" height="29"/>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tVI-Fu-JoP" firstAttribute="centerX" secondItem="YXj-Ct-7pW" secondAttribute="centerX" id="9xZ-Eu-Lsx"/>
+                            <constraint firstItem="tVI-Fu-JoP" firstAttribute="top" secondItem="oxL-Qw-ru2" secondAttribute="bottom" constant="66" id="Ak0-rV-sCv"/>
+                            <constraint firstItem="NMC-Ud-dqN" firstAttribute="trailing" secondItem="Cva-Yd-vIb" secondAttribute="trailing" id="CxR-L5-zJZ"/>
+                            <constraint firstItem="Cva-Yd-vIb" firstAttribute="leading" secondItem="NMC-Ud-dqN" secondAttribute="leading" id="Dta-1b-zfU"/>
+                            <constraint firstItem="oxL-Qw-ru2" firstAttribute="centerX" secondItem="YXj-Ct-7pW" secondAttribute="centerX" id="GbK-ge-JZP"/>
+                            <constraint firstItem="OKJ-rf-XOF" firstAttribute="centerX" secondItem="YXj-Ct-7pW" secondAttribute="centerX" id="Jah-DV-i2a"/>
+                            <constraint firstItem="NMC-Ud-dqN" firstAttribute="bottom" secondItem="OKJ-rf-XOF" secondAttribute="bottom" constant="22" id="d3W-b8-ICr"/>
+                            <constraint firstItem="oxL-Qw-ru2" firstAttribute="top" secondItem="Cva-Yd-vIb" secondAttribute="bottom" constant="130" id="fWh-Jo-TCT"/>
+                            <constraint firstItem="Cva-Yd-vIb" firstAttribute="top" secondItem="NMC-Ud-dqN" secondAttribute="top" id="paM-Xy-H7C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NMC-Ud-dqN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nrl-dG-sFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.3999999999999999" y="128.18590704647679"/>
+        </scene>
+    </scenes>
+</document>
